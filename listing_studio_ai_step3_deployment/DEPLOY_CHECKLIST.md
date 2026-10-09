@@ -1,0 +1,11 @@
+# Deployment checklist
+- [ ] Revoke any key pasted into chat, screenshots, or a repository.
+- [ ] Create a fresh Gemini key.
+- [ ] Confirm `.env` is not committed.
+- [ ] Run `npm install` and `npm run check`.
+- [ ] Run `npm start`, open `http://localhost:3000`, and test `/api/health`.
+- [ ] Test single AI generation with a real key.
+- [ ] Test sample CSV bulk generation.
+- [ ] Test single PDF, bulk PDF, and CSV exports.
+- [ ] Configure `GEMINI_API_KEY` in the hosting provider's private environment settings.
+- [ ] Add license, privacy policy, terms, support details, accounts, and billing before public SaaS launch.

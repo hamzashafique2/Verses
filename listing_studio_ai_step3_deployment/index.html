@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A polished AI product listing generator frontend template." />
+  <title>Listing Studio AI — Product Listing Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="Listing Studio AI home">
+        <span class="brand-mark"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7c5cff"/><stop offset="1" stop-color="#2d6bff"/></linearGradient></defs><rect x="4" y="5" width="25" height="29" rx="7" fill="url(#g)"/><path d="M11 14h11l-2 11H13z" fill="none" stroke="white" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 14v-2a3 3 0 0 1 6 0v2" fill="none" stroke="white" stroke-width="1.8"/><rect x="21" y="10" width="15" height="20" rx="4" fill="#fff" stroke="#dce3ff"/><path d="M24 16h9M24 20h8M24 24h6" stroke="#6b61ee" stroke-width="1.6" stroke-linecap="round"/><path d="m31 4 1.4 3.2L36 8.5l-3.6 1.3L31 13l-1.3-3.2-3.2-1.3 3.2-1.3z" fill="#b7a7ff"/></svg></span>
+        <span class="brand-copy"><strong>Listing Studio <em>AI</em></strong><small>PRODUCT LISTING GENERATOR</small></span>
+      </a>
+
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav-links" aria-label="Main navigation">
+        <button class="nav-item active" data-view="Create Listing"><span class="nav-icon">✦</span><span>Create listing</span><kbd>⌘ 1</kbd></button>
+        <button class="nav-item" data-view="Bulk Generator"><span class="nav-icon">▤</span><span>Bulk generator</span></button>
+        <button class="nav-item" data-view="Saved Listings"><span class="nav-icon">▱</span><span>Saved listings</span><span class="nav-count" id="savedCount">0</span></button>
+        <button class="nav-item" data-view="Templates"><span class="nav-icon">▦</span><span>Templates</span></button>
+        <button class="nav-item" data-view="History"><span class="nav-icon">◷</span><span>History</span></button>
+      </nav>
+
+      <div class="sidebar-spacer"></div>
+      <div class="upgrade-card">
+        <div class="upgrade-icon">✧</div>
+        <strong>Make every listing count.</strong>
+        <p>Unlock batch workflows, reusable brand voice, and export-ready content.</p>
+        <button class="upgrade-button" id="upgradeBtn">Explore Pro <span>↗</span></button>
+      </div>
+      <nav class="nav-links bottom-nav" aria-label="Secondary navigation">
+        <button class="nav-item" data-view="Settings"><span class="nav-icon">⚙</span><span>Settings</span></button>
+        <button class="nav-item" data-view="Help & Support"><span class="nav-icon">?</span><span>Help & support</span></button>
+      </nav>
+      <div class="profile">
+        <div class="avatar">LS</div>
+        <div class="profile-copy"><strong>Studio account</strong><small>Starter workspace</small></div>
+        <button class="dots" aria-label="Account options">•••</button>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">☰</button>
+        <label class="searchbox"><span>⌕</span><input id="globalSearch" type="search" placeholder="Search listings, templates..." /><kbd>⌘ K</kbd></label>
+        <div class="topbar-actions">
+          <span class="status-pill"><i></i> All systems normal</span>
+          <button class="icon-button" title="Notifications" aria-label="Notifications">♧<b></b></button>
+          <button class="account-button"><span class="mini-avatar">LS</span><span>My workspace</span><span class="chevron">⌄</span></button>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="welcome-row">
+          <div>
+            <div class="eyebrow"><span class="sparkle">✦</span> AI WORKSPACE <span class="eyebrow-divider">/</span> CREATE LISTING</div>
+            <h1>Turn product details into<br class="desktop-break"> <span>listings that sell.</span></h1>
+            <p class="hero-subtitle">Create polished product copy, search keywords, and social captions<br class="desktop-break"> from one simple workflow.</p>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="floating-spark">✦</div>
+            <div class="product-card-art">
+              <div class="product-thumb"><div class="shoe">◢</div></div>
+              <div class="art-lines"><i></i><i></i><i></i><i></i></div>
+              <div class="art-tags"><b></b><b></b><b></b></div>
+            </div>
+            <div class="ai-chip">✦ AI</div><div class="seo-chip">↗ SEO ready</div>
+          </div>
+        </section>
+
+        <section class="metrics-grid" aria-label="Workspace overview">
+          <article class="metric-card"><div class="metric-icon violet">✧</div><div><span>Content quality</span><strong>On-brand by design</strong><small>Consistent tone, every time</small></div><span class="metric-decoration">↗</span></article>
+          <article class="metric-card"><div class="metric-icon blue">⌕</div><div><span>SEO workflow</span><strong>Search-ready copy</strong><small>Titles, keywords & meta</small></div><span class="metric-decoration">↗</span></article>
+          <article class="metric-card"><div class="metric-icon green">⇩</div><div><span>Export options</span><strong>Ready for your store</strong><small>Copy or download CSV</small></div><span class="metric-decoration">↗</span></article>
+        </section>
+
+        <div class="section-heading">
+          <div><h2>Create a product listing</h2><p>Start with the essentials. Fine-tune the result whenever you need.</p></div>
+          <button class="text-button" id="resetBtn">↻ Reset form</button>
+        </div>
+
+        <section class="builder-grid">
+          <article class="panel input-panel">
+            <div class="panel-heading"><div class="panel-title-icon">01</div><div><h3>Product information</h3><p>Tell us what you're selling.</p></div><span class="required-note"><i></i> Required fields</span></div>
+            <form id="listingForm">
+              <div class="field">
+                <div class="label-row"><label for="productName">Product name <span>*</span></label><small id="nameCount">0 / 120</small></div>
+                <input id="productName" name="productName" maxlength="120" placeholder="e.g. Wireless Bluetooth Headphones" required value="Wireless Bluetooth Headphones" />
+              </div>
+              <div class="field">
+                <div class="label-row"><label for="features">Key features <span>*</span></label><small id="featuresCount">0 / 600</small></div>
+                <textarea id="features" name="features" maxlength="600" rows="4" required placeholder="Add the benefits, materials, dimensions, or key specs...">30-hour battery life, comfortable ear cushions, wireless connection, noise cancellation</textarea>
+                <div class="field-hint">Tip: Include specific facts. Avoid claims you cannot verify.</div>
+              </div>
+              <div class="field">
+                <label>Where will you sell?</label>
+                <div class="platform-options" role="group" aria-label="Selling platform">
+                  <button type="button" class="platform selected" data-platform="Shopify"><span class="platform-logo shopify">S</span> Shopify</button>
+                  <button type="button" class="platform" data-platform="Amazon"><span class="platform-logo amazon">a</span> Amazon</button>
+                  <button type="button" class="platform" data-platform="Etsy"><span class="platform-logo etsy">E</span> Etsy</button>
+                  <button type="button" class="platform" data-platform="Other"><span class="platform-logo other">◎</span> Other</button>
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="tone">Writing tone</label>
+                  <div class="select-wrap"><select id="tone"><option>Professional</option><option>Persuasive</option><option>Friendly</option><option>Luxury</option><option>Playful</option></select><span>⌄</span></div>
+                </div>
+                <div class="field">
+                  <label for="language">Language</label>
+                  <div class="select-wrap"><select id="language"><option>English</option><option>Urdu</option><option>Spanish</option><option>French</option><option>German</option></select><span>⌄</span></div>
+                </div>
+              </div>
+              <details class="advanced-options">
+                <summary><span class="settings-symbol">⚙</span><span><strong>Advanced options</strong><small>Customize your listing output</small></span><b>＋</b></summary>
+                <div class="advanced-content">
+                  <div class="field"><label for="audience">Target customer</label><input id="audience" placeholder="e.g. commuters, students, travelers" /></div>
+                  <div class="field"><label for="keywords">Keywords to include (optional)</label><input id="keywords" placeholder="Separate keywords with commas" /></div>
+                  <label class="checkbox-row"><input id="emojiToggle" type="checkbox" /> Allow emojis in social captions</label>
+                </div>
+              </details>
+              <button class="generate-button" type="submit"><span>✦</span> Generate listing <b>→</b></button>
+              <div class="form-footnote"><span>◇</span> Frontend demo · no API key required</div>
+            </form>
+          </article>
+
+          <article class="panel results-panel">
+            <div class="results-header">
+              <div class="panel-heading compact"><div class="panel-title-icon result-icon">02</div><div><h3>Generated content</h3><p>Review, refine, and export your copy.</p></div></div>
+              <span class="draft-status" id="resultStatus"><i></i> Example content</span>
+            </div>
+            <div class="result-tabs" role="tablist" aria-label="Generated content type">
+              <button class="result-tab active" role="tab" aria-selected="true" data-tab="description"><span>▤</span> Product copy</button>
+              <button class="result-tab" role="tab" aria-selected="false" data-tab="seo"><span>⌕</span> SEO keywords</button>
+              <button class="result-tab" role="tab" aria-selected="false" data-tab="social"><span>⌯</span> Social caption</button>
+            </div>
+            <div class="result-toolbar"><span id="resultLabel">PRODUCT DESCRIPTION</span><div><button class="small-action" id="copyBtn">▢ <span>Copy</span></button><button class="small-action" id="downloadBtn">⇩ <span>Export</span></button><button class="small-action" id="downloadPdfBtn" type="button">▤ <span>PDF</span></button></div></div>
+            <div class="output-area" id="outputArea" aria-live="polite">
+              <div class="output-block">
+                <div class="output-label"><span>Product title</span><button class="copy-mini" data-copy="title" title="Copy title">▢</button></div>
+                <p class="output-title" id="outputTitle">Wireless Bluetooth Headphones with 30-Hour Battery Life & Comfortable Ear Cushions</p>
+              </div>
+              <div class="output-block">
+                <div class="output-label"><span>Product description</span><button class="copy-mini" data-copy="description" title="Copy description">▢</button></div>
+                <p id="outputDescription">Enjoy your favorite audio with wireless Bluetooth headphones designed for everyday comfort. The long-lasting 30-hour battery helps keep your music going, while cushioned ear pads and a wireless connection make listening easy at home or on the go.</p>
+              </div>
+              <div class="output-block">
+                <div class="output-label"><span>Key features</span><button class="copy-mini" data-copy="bullets" title="Copy features">▢</button></div>
+                <ul id="outputBullets"><li>Up to 30-hour battery life</li><li>Comfortable cushioned ear pads</li><li>Wireless Bluetooth connectivity</li><li>Noise cancellation (as supplied)</li></ul>
+              </div>
+            </div>
+            <div class="result-footer"><div class="tip-icon">✦</div><div><strong>Pro tip</strong><p>Use accurate product details and relevant keywords. Good copy sets clear expectations and helps shoppers decide.</p></div></div>
+            <div class="save-row"><div><span class="save-icon">▱</span><span><strong>Keep this listing</strong><small>Save it in this browser for later.</small></span></div><button class="save-button" id="saveBtn">♡ Save listing</button></div>
+          </article>
+        </section>
+        <footer class="footer"><span>© 2026 Listing Studio AI · Frontend starter</span><span><i></i> Built for product creators</span></footer>
+
+        <section class="bulk-view" id="bulkView" hidden>
+          <div class="section-heading bulk-heading"><div><div class="eyebrow"><span class="sparkle">✦</span> BATCH WORKFLOW <span class="eyebrow-divider">/</span> BULK GENERATOR</div><h2>Generate listings in bulk</h2><p>Upload a CSV, check your product rows, then create listing drafts for every product.</p></div><a class="text-button sample-download" href="#" id="sampleCsvBtn">↓ Download sample CSV</a></div>
+          <div class="bulk-layout">
+            <article class="panel bulk-upload-panel"><div class="panel-heading"><div class="panel-title-icon">01</div><div><h3>Upload your product CSV</h3><p>Use one row per product.</p></div></div>
+              <label class="upload-dropzone" for="bulkCsvInput" id="bulkDropzone"><span class="upload-icon">↑</span><strong>Choose a CSV file</strong><span>or drag and drop it here</span><small>Required columns: name, features. Optional: audience, keywords, price, platform.</small></label><input id="bulkCsvInput" type="file" accept=".csv,text/csv" hidden />
+              <div class="bulk-file-row" id="bulkFileRow" hidden><span class="file-icon">CSV</span><div><strong id="bulkFileName">products.csv</strong><small id="bulkFileMeta">0 products found</small></div><button class="text-button" type="button" id="removeBulkFile">Remove</button></div>
+              <div class="field-row bulk-settings"><div class="field"><label for="bulkPlatform">Marketplace</label><div class="select-wrap"><select id="bulkPlatform"><option>Shopify</option><option>Amazon</option><option>Etsy</option><option>Other</option></select><span>⌄</span></div></div><div class="field"><label for="bulkTone">Writing tone</label><div class="select-wrap"><select id="bulkTone"><option>Professional</option><option>Persuasive</option><option>Friendly</option><option>Luxury</option><option>Playful</option></select><span>⌄</span></div></div></div>
+              <div class="bulk-action-row"><button class="generate-button" type="button" id="generateBulkBtn" disabled><span>✦</span> Generate all listings <b>→</b></button><span class="field-hint" id="bulkStatus">Upload a CSV to get started.</span></div><p class="bulk-disclaimer">Real Gemini generation runs through your private backend. Keep your API key on the server.</p>
+            </article>
+            <article class="panel bulk-preview-panel"><div class="panel-heading"><div class="panel-title-icon">02</div><div><h3>Product preview</h3><p>Review your imported rows before generating.</p></div><span class="bulk-count" id="bulkCount">0 products</span></div>
+              <div class="bulk-table-wrap"><table class="bulk-table"><thead><tr><th>Product</th><th>Features</th><th>Status</th></tr></thead><tbody id="bulkTableBody"><tr><td colspan="3" class="bulk-empty">Your imported products will appear here.</td></tr></tbody></table></div>
+              <div class="bulk-results-footer"><span id="bulkResultsSummary">No listings generated yet.</span><button class="secondary-button" type="button" id="downloadBulkBtn" disabled>↓ Export results CSV</button><button class="secondary-button" type="button" id="downloadBulkPdfBtn" disabled>▤ Export PDF</button></div>
+            </article>
+          </div>
+        </section>
+
+      </div>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js" referrerpolicy="no-referrer"></script>
+  <script src="app.js"></script>
+</body>
+</html>
